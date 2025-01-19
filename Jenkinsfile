@@ -17,16 +17,29 @@ pipeline {
         stage('Build and Test') {
             steps {
                 script {
-                    // Ejecutar el build y las pruebas
-                    bat './gradlew clean build'
+                    // Ejecutar las pruebas
+                    bat './gradlew clean test'
                 }
             }
             post {
                 always {
-                    // Asegurar que los reportes de Cucumber se generan después de las pruebas
+                    // Verificar si el archivo cucumber.json se generó
                     script {
-                        bat './gradlew cucumberTestReport'
+                        if (fileExists('target/cucumber.json')) {
+                            echo 'Archivo cucumber.json generado correctamente.'
+                        } else {
+                            echo 'Advertencia: El archivo cucumber.json no se generó.'
+                        }
                     }
+                }
+            }
+        }
+
+        stage('Generate Cucumber Report') {
+            steps {
+                script {
+                    // Generar reporte de Cucumber
+                    bat './gradlew cucumberTestReport'
                 }
             }
         }
@@ -47,7 +60,6 @@ pipeline {
 
     post {
         always {
-            // Limpiar el workspace
             cleanWs()
         }
     }

@@ -41,12 +41,11 @@ test {
     }
 }
 
-// Tarea para generar el reporte de Cucumber
 task cucumberTestReport(type: JavaExec) {
     main = "net.masterthought.cucumber.ReportBuilder"
     classpath = sourceSets.test.runtimeClasspath
     args = [
-            'target/cucumber.json',             // Archivo JSON generado por las pruebas
+            'target/cucumber.json',             // Asegúrate de que esta ubicación sea correcta
             '--output', 'build/reports/cucumber',
             '--formats', 'html'
     ]
