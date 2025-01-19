@@ -11,15 +11,15 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                // Checkout del código fuente
+
                 checkout scm
             }
         }
         stage('Build') {
             steps {
-                // Construcción y ejecución de pruebas con Gradle
+
                 script {
-                    sh './gradlew clean build'
+                    bat './gradlew clean build'
                 }
             }
         }
@@ -27,7 +27,7 @@ pipeline {
             steps {
                 // Ejecución de pruebas
                 script {
-                    sh './gradlew test'
+                    bat './gradlew test'
                 }
             }
         }
