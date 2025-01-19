@@ -9,7 +9,6 @@ def cucumberVersion = "5.7.0"
 def junit4Version = "4.12"
 def restAssuredVersion = "4.3.3"
 
-
 compileJava.options.encoding = "UTF-8"
 compileTestJava.options.encoding = "UTF-8"
 
@@ -40,6 +39,17 @@ test {
     testLogging {
         events "PASSED", "FAILED", "SKIPPED"
     }
+}
+
+// Tarea para generar el reporte de Cucumber
+task cucumberTestReport(type: JavaExec) {
+    main = "net.masterthought.cucumber.ReportBuilder"
+    classpath = sourceSets.test.runtimeClasspath
+    args = [
+            'target/cucumber.json',             // Archivo JSON generado por las pruebas
+            '--output', 'build/reports/cucumber',
+            '--formats', 'html'
+    ]
 }
 
 
