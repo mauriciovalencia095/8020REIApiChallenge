@@ -3,7 +3,7 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2025-01-19T18:06:37.460Z",
+        "start_timestamp": "2025-01-19T18:19:10.089Z",
         "line": 4,
         "name": "Obtener una lista de publicaciones",
         "description": "",
@@ -13,7 +13,7 @@
         "steps": [
           {
             "result": {
-              "duration": 653766100,
+              "duration": 637740400,
               "status": "passed"
             },
             "line": 5,
@@ -25,7 +25,7 @@
           },
           {
             "result": {
-              "duration": 1651922600,
+              "duration": 1580953000,
               "status": "passed"
             },
             "line": 6,
@@ -43,6 +43,7 @@
           },
           {
             "result": {
+              "duration": 2540900,
               "status": "passed"
             },
             "line": 7,
@@ -60,7 +61,7 @@
           },
           {
             "result": {
-              "duration": 306472100,
+              "duration": 291252300,
               "status": "passed"
             },
             "line": 8,
@@ -72,7 +73,7 @@
           },
           {
             "result": {
-              "duration": 28609900,
+              "duration": 28526600,
               "status": "passed"
             },
             "line": 9,
@@ -103,7 +104,7 @@
         ]
       },
       {
-        "start_timestamp": "2025-01-19T18:06:40.267Z",
+        "start_timestamp": "2025-01-19T18:19:12.735Z",
         "line": 11,
         "name": "Crear una nueva publicacion",
         "description": "",
@@ -124,7 +125,7 @@
           },
           {
             "result": {
-              "duration": 937502100,
+              "duration": 760231700,
               "status": "passed"
             },
             "line": 13,
@@ -185,7 +186,7 @@
           },
           {
             "result": {
-              "duration": 527987500,
+              "duration": 473636900,
               "status": "passed"
             },
             "line": 19,
@@ -212,7 +213,7 @@
         ]
       },
       {
-        "start_timestamp": "2025-01-19T18:06:41.748Z",
+        "start_timestamp": "2025-01-19T18:19:13.975Z",
         "line": 21,
         "name": "Actualizar una publicacion existente",
         "description": "",
@@ -233,7 +234,7 @@
           },
           {
             "result": {
-              "duration": 366674700,
+              "duration": 345189200,
               "status": "passed"
             },
             "line": 23,
@@ -298,7 +299,7 @@
           },
           {
             "result": {
-              "duration": 79397000,
+              "duration": 38487600,
               "status": "passed"
             },
             "line": 29,
@@ -343,7 +344,7 @@
         ]
       },
       {
-        "start_timestamp": "2025-01-19T18:06:42.194Z",
+        "start_timestamp": "2025-01-19T18:19:14.369Z",
         "line": 36,
         "name": "Eliminar una publicacion",
         "description": "",
@@ -364,7 +365,7 @@
           },
           {
             "result": {
-              "duration": 350041000,
+              "duration": 322995300,
               "status": "passed"
             },
             "line": 38,
@@ -403,7 +404,7 @@
           },
           {
             "result": {
-              "duration": 249416500,
+              "duration": 237226900,
               "status": "passed"
             },
             "line": 40,
