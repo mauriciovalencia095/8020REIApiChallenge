@@ -1,0 +1,454 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2025-01-19T01:18:30.013Z",
+        "line": 4,
+        "name": "Obtener una lista de publicaciones",
+        "description": "",
+        "id": "pruebas-de-la-api-jsonplaceholder;obtener-una-lista-de-publicaciones",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 421836600,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "que la API esta disponible",
+            "match": {
+              "location": "co.REI.stepdefinitions.ApiStepDefinitions.queLaApiEstaDisponible()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1075851300,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "envio una solicitud GET a \"/posts\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"/posts\"",
+                  "offset": 26
+                }
+              ],
+              "location": "co.REI.stepdefinitions.ApiStepDefinitions.envioUnaSolicitudGET(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 999800,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "el codigo de respuesta deberia ser 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 35
+                }
+              ],
+              "location": "co.REI.stepdefinitions.ApiStepDefinitions.elCodigoDeRespuestaDeberiaSer(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 164120100,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "el cuerpo de la respuesta deberia contener una lista con al menos un elemento",
+            "match": {
+              "location": "co.REI.stepdefinitions.ApiStepDefinitions.elCuerpoDeLaRespuestaDeberiaContenerUnaListaConAlMenosUnElemento()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 14999300,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "cada publicacion deberia tener los campos \"userId\", \"id\", \"title\" y \"body\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"userId\"",
+                  "offset": 42
+                },
+                {
+                  "val": "\"id\"",
+                  "offset": 52
+                },
+                {
+                  "val": "\"title\"",
+                  "offset": 58
+                },
+                {
+                  "val": "\"body\"",
+                  "offset": 68
+                }
+              ],
+              "location": "co.REI.stepdefinitions.ApiStepDefinitions.cadaPublicacionDeberiaTenerLosCampos(java.lang.String,java.lang.String,java.lang.String,java.lang.String)"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2025-01-19T01:18:31.749Z",
+        "line": 11,
+        "name": "Crear una nueva publicacion",
+        "description": "",
+        "id": "pruebas-de-la-api-jsonplaceholder;crear-una-nueva-publicacion",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "que la API esta disponible",
+            "match": {
+              "location": "co.REI.stepdefinitions.ApiStepDefinitions.queLaApiEstaDisponible()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 616021600,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "envio una solicitud POST a \"/posts\" con el siguiente payload:",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"/posts\"",
+                  "offset": 27
+                }
+              ],
+              "location": "co.REI.stepdefinitions.ApiStepDefinitions.envioUnaSolicitudPOST(java.lang.String,java.util.Map\u003cjava.lang.String, java.lang.Object\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "key",
+                  "value"
+                ]
+              },
+              {
+                "cells": [
+                  "title",
+                  "foo"
+                ]
+              },
+              {
+                "cells": [
+                  "body",
+                  "bar"
+                ]
+              },
+              {
+                "cells": [
+                  "userId",
+                  "1"
+                ]
+              }
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "el codigo de respuesta deberia ser 201",
+            "match": {
+              "arguments": [
+                {
+                  "val": "201",
+                  "offset": 35
+                }
+              ],
+              "location": "co.REI.stepdefinitions.ApiStepDefinitions.elCodigoDeRespuestaDeberiaSer(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 311397600,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "el cuerpo de la respuesta deberia contener los mismos campos \"title\", \"body\" y \"userId\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"title\"",
+                  "offset": 61
+                },
+                {
+                  "val": "\"body\"",
+                  "offset": 70
+                },
+                {
+                  "val": "\"userId\"",
+                  "offset": 79
+                }
+              ],
+              "location": "co.REI.stepdefinitions.ApiStepDefinitions.elCuerpoDeLaRespuestaDeberiaContenerLosMismosCampos(java.lang.String,java.lang.String,java.lang.String)"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2025-01-19T01:18:32.681Z",
+        "line": 21,
+        "name": "Actualizar una publicacion existente",
+        "description": "",
+        "id": "pruebas-de-la-api-jsonplaceholder;actualizar-una-publicacion-existente",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 1174700,
+              "status": "passed"
+            },
+            "line": 22,
+            "name": "que la API esta disponible",
+            "match": {
+              "location": "co.REI.stepdefinitions.ApiStepDefinitions.queLaApiEstaDisponible()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 327305400,
+              "status": "passed"
+            },
+            "line": 23,
+            "name": "envio una solicitud PUT a \"/posts\" con el ID 1 y el siguiente payload:",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"/posts\"",
+                  "offset": 26
+                },
+                {
+                  "val": "1",
+                  "offset": 45
+                }
+              ],
+              "location": "co.REI.stepdefinitions.ApiStepDefinitions.envioUnaSolicitudPUT(java.lang.String,int,java.util.Map\u003cjava.lang.String, java.lang.Object\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "id",
+                  "1"
+                ]
+              },
+              {
+                "cells": [
+                  "title",
+                  "titulo actualizado"
+                ]
+              },
+              {
+                "cells": [
+                  "body",
+                  "contenido actualizado"
+                ]
+              },
+              {
+                "cells": [
+                  "userId",
+                  "1"
+                ]
+              }
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1000700,
+              "status": "passed"
+            },
+            "line": 28,
+            "name": "el codigo de respuesta deberia ser 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 35
+                }
+              ],
+              "location": "co.REI.stepdefinitions.ApiStepDefinitions.elCodigoDeRespuestaDeberiaSer(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 42903800,
+              "status": "passed"
+            },
+            "line": 29,
+            "name": "el cuerpo de la respuesta deberia reflejar los datos actualizados:",
+            "match": {
+              "location": "co.REI.stepdefinitions.ApiStepDefinitions.elCuerpoDeLaRespuestaDeberiaReflejarLosDatosActualizados(java.util.Map\u003cjava.lang.String, java.lang.Object\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "key",
+                  "value"
+                ]
+              },
+              {
+                "cells": [
+                  "id",
+                  "1"
+                ]
+              },
+              {
+                "cells": [
+                  "title",
+                  "titulo actualizado"
+                ]
+              },
+              {
+                "cells": [
+                  "body",
+                  "contenido actualizado"
+                ]
+              },
+              {
+                "cells": [
+                  "userId",
+                  "1"
+                ]
+              }
+            ],
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2025-01-19T01:18:33.056Z",
+        "line": 36,
+        "name": "Eliminar una publicacion",
+        "description": "",
+        "id": "pruebas-de-la-api-jsonplaceholder;eliminar-una-publicacion",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 37,
+            "name": "que la API esta disponible",
+            "match": {
+              "location": "co.REI.stepdefinitions.ApiStepDefinitions.queLaApiEstaDisponible()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 328254600,
+              "status": "passed"
+            },
+            "line": 38,
+            "name": "envio una solicitud DELETE a \"/posts\" con el ID 1",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"/posts\"",
+                  "offset": 29
+                },
+                {
+                  "val": "1",
+                  "offset": 48
+                }
+              ],
+              "location": "co.REI.stepdefinitions.ApiStepDefinitions.envioUnaSolicitudDELETE(java.lang.String,int)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 39,
+            "name": "el codigo de respuesta deberia ser 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 35
+                }
+              ],
+              "location": "co.REI.stepdefinitions.ApiStepDefinitions.elCodigoDeRespuestaDeberiaSer(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 293152900,
+              "status": "passed"
+            },
+            "line": 40,
+            "name": "intento recuperar la publicacion eliminada con una solicitud GET a \"/posts/1\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"/posts/1\"",
+                  "offset": 67
+                }
+              ],
+              "location": "co.REI.stepdefinitions.ApiStepDefinitions.intentoRecuperarLaPublicacionEliminada(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "error_message": "java.lang.AssertionError: expected:\u003c404\u003e but was:\u003c200\u003e\r\n\tat org.junit.Assert.fail(Assert.java:89)\r\n\tat org.junit.Assert.failNotEquals(Assert.java:835)\r\n\tat org.junit.Assert.assertEquals(Assert.java:647)\r\n\tat org.junit.Assert.assertEquals(Assert.java:633)\r\n\tat co.REI.stepdefinitions.ApiStepDefinitions.elCodigoDeRespuestaDeberiaSer(ApiStepDefinitions.java:29)\r\n\tat ✽.el codigo de respuesta deberia ser 404(file:///C:/Users/valen/Documents/8020APIChallenge/src/test/resources/features/FlujoAPIJson.feature:41)\r\n",
+              "duration": 1999200,
+              "status": "failed"
+            },
+            "line": 41,
+            "name": "el codigo de respuesta deberia ser 404",
+            "match": {
+              "arguments": [
+                {
+                  "val": "404",
+                  "offset": 35
+                }
+              ],
+              "location": "co.REI.stepdefinitions.ApiStepDefinitions.elCodigoDeRespuestaDeberiaSer(int)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Pruebas de la API JSONPlaceholder",
+    "description": "  Validar las funcionalidades de la API JSONPlaceholder a traves de los metodos HTTP soportados.",
+    "id": "pruebas-de-la-api-jsonplaceholder",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/features/FlujoAPIJson.feature",
+    "tags": []
+  }
+]
