@@ -2,14 +2,13 @@ pipeline {
     agent any
 
     environment {
-        GRADLE_HOME = 'C:/workspace/gradle-8.12-bin/gradle-8.12'
-        PATH = "$GRADLE_HOME/bin:$PATH"
-        JAVA_HOME = 'C:/workspace/OpenJDK17U-jdk_x64_windows_hotspot_17.0.13_11/jdk-17.0.13+11'
+        // Define variables de entorno si es necesario
     }
 
     stages {
         stage('Checkout') {
             steps {
+                // Clonar tu repositorio
                 checkout scm
             }
         }
@@ -17,50 +16,37 @@ pipeline {
         stage('Build and Test') {
             steps {
                 script {
-                    // Ejecutar las pruebas
-                    bat './gradlew clean test'
-                }
-            }
-            post {
-                always {
-                    // Verificar si el archivo cucumber.json se generó
-                    script {
-                        if (fileExists('target/cucumber.json')) {
-                            echo 'Archivo cucumber.json generado correctamente.'
-                        } else {
-                            echo 'Advertencia: El archivo cucumber.json no se generó.'
-                        }
-                    }
+                    // Ejecutar los tests de Gradle
+                    sh './gradlew clean test'
                 }
             }
         }
 
-        stage('Generate Cucumber Report') {
+        stage('Publish Cucumber Report') {
             steps {
                 script {
-                    // Generar reporte de Cucumber
-                    bat './gradlew cucumberTestReport'
+                    // Publicar el reporte de Cucumber en Jenkins usando el plugin
+                    // Se debe proporcionar la ruta al archivo JSON generado por Cucumber
+                    cucumber reports: '**/target/cucumber-report.json',
+                                      cucumberReportTitle: 'Cucumber Test Report',
+                                      cucumberReportOverview: true
                 }
-            }
-        }
-
-        stage('Publish Reports') {
-            steps {
-                publishHTML(target: [
-                    reportName: 'Cucumber Report',
-                    reportDir: 'build/reports/cucumber',
-                    reportFiles: 'cucumber-html-reports.html',
-                    keepAll: true,
-                    alwaysLinkToLastBuild: true,
-                    allowMissing: true
-                ])
             }
         }
     }
 
     post {
         always {
-            cleanWs()
+            // Pasos adicionales para realizar después de la ejecución
+            echo 'Pipeline completado'
+        }
+        success {
+            // Enviar una notificación si el pipeline es exitoso
+            echo 'La ejecución fue exitosa.'
+        }
+        failure {
+            // Enviar una notificación si el pipeline falla
+            echo 'La ejecución falló.'
         }
     }
 }

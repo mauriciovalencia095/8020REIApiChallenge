@@ -5,9 +5,10 @@ plugins {
 group 'co.REI'
 version '1.0'
 
-def cucumberVersion = "5.7.0"
+def cucumberVersion = "6.10.4"
 def junit4Version = "4.12"
 def restAssuredVersion = "4.3.3"
+
 
 compileJava.options.encoding = "UTF-8"
 compileTestJava.options.encoding = "UTF-8"
@@ -41,14 +42,7 @@ test {
     }
 }
 
-task cucumberTestReport(type: JavaExec) {
-    main = "net.masterthought.cucumber.ReportBuilder"
-    classpath = sourceSets.test.runtimeClasspath
-    args = [
-            'target/cucumber.json',             // Asegúrate de que esta ubicación sea correcta
-            '--output', 'build/reports/cucumber',
-            '--formats', 'html'
-    ]
-}
+
+
 
 

@@ -9,7 +9,6 @@ import org.junit.runner.RunWith;
         glue = "co.REI",
         plugin = {
                 "pretty",
-                "html:target/cucumber-reports.html",
                 "json:target/cucumber.json"
         },
         monochrome = true
