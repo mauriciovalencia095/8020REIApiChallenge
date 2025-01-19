@@ -15,7 +15,7 @@ pipeline {
                 checkout scm
             }
         }
-        stage('Build') {
+        stage('Test') {
             steps {
 
                 script {
@@ -23,14 +23,14 @@ pipeline {
                 }
             }
         }
-        stage('Test') {
+        /*stage('Test') {
             steps {
                 // Ejecución de pruebas
                 script {
                     bat './gradlew test'
                 }
             }
-        }
+        }*/
         stage('Publish Reports') {
             steps {
                 // Publicar reportes HTML en Jenkins
