@@ -3,7 +3,7 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2025-01-19T01:18:30.013Z",
+        "start_timestamp": "2025-01-19T01:45:47.967Z",
         "line": 4,
         "name": "Obtener una lista de publicaciones",
         "description": "",
@@ -13,7 +13,7 @@
         "steps": [
           {
             "result": {
-              "duration": 421836600,
+              "duration": 442687400,
               "status": "passed"
             },
             "line": 5,
@@ -25,7 +25,7 @@
           },
           {
             "result": {
-              "duration": 1075851300,
+              "duration": 1206082600,
               "status": "passed"
             },
             "line": 6,
@@ -43,7 +43,7 @@
           },
           {
             "result": {
-              "duration": 999800,
+              "duration": 14114700,
               "status": "passed"
             },
             "line": 7,
@@ -61,7 +61,7 @@
           },
           {
             "result": {
-              "duration": 164120100,
+              "duration": 159526100,
               "status": "passed"
             },
             "line": 8,
@@ -73,7 +73,7 @@
           },
           {
             "result": {
-              "duration": 14999300,
+              "duration": 13673100,
               "status": "passed"
             },
             "line": 9,
@@ -104,7 +104,7 @@
         ]
       },
       {
-        "start_timestamp": "2025-01-19T01:18:31.749Z",
+        "start_timestamp": "2025-01-19T01:45:49.881Z",
         "line": 11,
         "name": "Crear una nueva publicacion",
         "description": "",
@@ -125,7 +125,7 @@
           },
           {
             "result": {
-              "duration": 616021600,
+              "duration": 625809100,
               "status": "passed"
             },
             "line": 13,
@@ -186,7 +186,7 @@
           },
           {
             "result": {
-              "duration": 311397600,
+              "duration": 348492100,
               "status": "passed"
             },
             "line": 19,
@@ -213,7 +213,7 @@
         ]
       },
       {
-        "start_timestamp": "2025-01-19T01:18:32.681Z",
+        "start_timestamp": "2025-01-19T01:45:50.855Z",
         "line": 21,
         "name": "Actualizar una publicacion existente",
         "description": "",
@@ -223,7 +223,6 @@
         "steps": [
           {
             "result": {
-              "duration": 1174700,
               "status": "passed"
             },
             "line": 22,
@@ -235,7 +234,7 @@
           },
           {
             "result": {
-              "duration": 327305400,
+              "duration": 352131300,
               "status": "passed"
             },
             "line": 23,
@@ -283,7 +282,6 @@
           },
           {
             "result": {
-              "duration": 1000700,
               "status": "passed"
             },
             "line": 28,
@@ -301,7 +299,7 @@
           },
           {
             "result": {
-              "duration": 42903800,
+              "duration": 31454100,
               "status": "passed"
             },
             "line": 29,
@@ -346,7 +344,7 @@
         ]
       },
       {
-        "start_timestamp": "2025-01-19T01:18:33.056Z",
+        "start_timestamp": "2025-01-19T01:45:51.239Z",
         "line": 36,
         "name": "Eliminar una publicacion",
         "description": "",
@@ -367,7 +365,7 @@
           },
           {
             "result": {
-              "duration": 328254600,
+              "duration": 295273000,
               "status": "passed"
             },
             "line": 38,
@@ -406,7 +404,7 @@
           },
           {
             "result": {
-              "duration": 293152900,
+              "duration": 267310200,
               "status": "passed"
             },
             "line": 40,
@@ -425,7 +423,6 @@
           {
             "result": {
               "error_message": "java.lang.AssertionError: expected:\u003c404\u003e but was:\u003c200\u003e\r\n\tat org.junit.Assert.fail(Assert.java:89)\r\n\tat org.junit.Assert.failNotEquals(Assert.java:835)\r\n\tat org.junit.Assert.assertEquals(Assert.java:647)\r\n\tat org.junit.Assert.assertEquals(Assert.java:633)\r\n\tat co.REI.stepdefinitions.ApiStepDefinitions.elCodigoDeRespuestaDeberiaSer(ApiStepDefinitions.java:29)\r\n\tat ✽.el codigo de respuesta deberia ser 404(file:///C:/Users/valen/Documents/8020APIChallenge/src/test/resources/features/FlujoAPIJson.feature:41)\r\n",
-              "duration": 1999200,
               "status": "failed"
             },
             "line": 41,

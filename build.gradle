@@ -27,7 +27,6 @@ dependencies {
     // Cucumber dependencies
     testImplementation("io.cucumber:cucumber-junit:$cucumberVersion")
     testImplementation 'org.seleniumhq.selenium:selenium-java:4.1.3'
-    testImplementation "org.apache.commons:commons-io:2.11.0"
     testImplementation("io.cucumber:cucumber-java:$cucumberVersion")
     implementation 'net.masterthought:cucumber-reporting:5.8.1'
     testImplementation("junit:junit:$junit4Version")
